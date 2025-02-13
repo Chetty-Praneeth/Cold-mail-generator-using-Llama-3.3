@@ -1,4 +1,4 @@
 .DS_Store
 api-key
 venv/
-.ipynb_checkpoints
+.ipynb_checkpoints/
