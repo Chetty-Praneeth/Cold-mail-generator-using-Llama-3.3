@@ -58,7 +58,7 @@ class Chain:
         Resume:
         Give Linkedin link at the end by saying Linkedin and nothing else: www.linkedin.com/in/praneeth-chetty
 
-        End with thank you give your name.
+        End with thank you give your name
         
         Incorporate the most relevant ones from the following links to showcase the candidate’s portfolio, resume, and LinkedIn:{link_list}
         
