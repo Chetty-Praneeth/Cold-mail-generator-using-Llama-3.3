@@ -12,7 +12,7 @@ This project is a Cold Email Generator designed to automate and streamline the p
 ## Technologies Used
 
 - **Llama 3.3**: A state-of-the-art language model for generating natural, context-aware cold emails.
-- **Gorqclud**: A web scraping tool used to extract job details from URLs.
+- **Gorqcloud**: for running the Llama 3.3 model to generate cold emails based on job descriptions, leveraging Groq's AI acceleration capabilities.
 - **Streamlit**: Framework for deploying the application and providing a user-friendly interface.
 - **uuid**: Used for generating unique identifiers for each session or email generation request.
 - **Langchain**: Helps in orchestrating complex chains of operations and logic for natural language processing.
