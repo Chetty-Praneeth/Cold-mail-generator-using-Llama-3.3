@@ -51,10 +51,10 @@ Make sure you have the following installed on your system:
 
 ## Usage
 
-Enter Job URL: Provide the URL of the job listing (internship or full-time role).
-Portfolio Mapping: Upload your portfolio or resume link, and the tool will map your portfolio to the job description.
-Generate Cold Email: Once the details are extracted, click the "Generate" button, and a personalized cold email will be created for you.
-Send: Copy the generated email and send it to the hiring manager or recruiter.
+- **Enter Job URL**: Provide the URL of the job listing (internship or full-time role).
+- **Portfolio Mapping**: Upload your portfolio or resume link, and the tool will map your portfolio to the job description.
+- **Generate Cold Email**: Once the details are extracted, click the "Generate" button, and a personalized cold email will be created for you.
+- **Send**: Copy the generated email and send it to the hiring manager or recruiter.
 
 
 ## Deployment
