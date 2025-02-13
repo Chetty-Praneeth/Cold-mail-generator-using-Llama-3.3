@@ -1,4 +1,5 @@
 import os
+import streamlit as st
 from langchain_groq import ChatGroq
 from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import JsonOutputParser
@@ -31,8 +32,12 @@ class Chain:
         except OutputParserException:
             raise OutputParserException("Context too big. Unable to parse jobs.")
         return res if isinstance(res, list) else [res]
+    
 
     def write_mail(self, job, links):
+        # Ensure that links are formatted correctly as a string for easier display in the email
+        formatted_links = "\n".join([f"- {link}" for link in links])
+
         prompt_email = PromptTemplate.from_template(
             """
         ### JOB DESCRIPTION:
@@ -58,17 +63,41 @@ class Chain:
         Resume:
         Give Linkedin link at the end by saying Linkedin and nothing else: www.linkedin.com/in/praneeth-chetty
 
-        End with thank you give your name
+        End with thank you give your name.
         
         Incorporate the most relevant ones from the following links to showcase the candidate’s portfolio, resume, and LinkedIn:{link_list}
         
         Remember, you are Praneeth Chetty, a developer specializing in AI-driven automation. Do not provide a preamble.
         
-        """
-        )
+        """, unsafe_allow_html=True)
+        
         chain_email = prompt_email | self.llm
-        res = chain_email.invoke({"job_description": str(job), "link_list": links})
-        return res.content
+        res = chain_email.invoke({"job_description": str(job), "link_list": formatted_links})
+
+        # Now, display the generated email content inside a scrollable container with a maximum width to avoid overflow.
+        email_content = res.content  # Store the result
+
+        # Clear output to prevent it from being shown twice
+        st.empty()  # Clears the previous content that might have been displayed
+
+        # Add styles to ensure the email content fits inside a scrollable container
+        st.markdown(
+            """
+            <style>
+            .email-output {
+                max-width: 800px;
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+                white-space: pre-wrap;
+                overflow-y: auto;
+            }
+            </style>
+            """, unsafe_allow_html=True)
+
+        # Display the email content inside a scrollable container
+        st.markdown(f'<div class="email-output">{email_content}</div>', unsafe_allow_html=True)
+
+        return email_content
 
 if __name__ == "__main__":
     print(os.getenv("GROQ_API_KEY"))
