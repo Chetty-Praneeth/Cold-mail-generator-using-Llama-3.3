@@ -2,3 +2,4 @@
 api-key
 venv/
 .ipynb_checkpoints/
+/vector_store/
