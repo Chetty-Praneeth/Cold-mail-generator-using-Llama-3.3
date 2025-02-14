@@ -49,6 +49,9 @@ Make sure you have the following installed on your system:
 
 5. Open the provided local URL (usually http://localhost:8501) in your web browser to use the application.
 
+
+### Output:
+<img src="images/output.png" width="500">
 ## Usage
 
 - **Enter Job URL**: Provide the URL of the job listing (internship or full-time role).
