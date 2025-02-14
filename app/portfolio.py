@@ -4,7 +4,7 @@ import uuid
 
 
 class Portfolio:
-    def __init__(self, file_path="/Users/praneethchetty/Documents/myprojects/Cold-mail-generator- using Llama-3.1/app/resources/my_portfolio.csv"):
+    def __init__(self, file_path="/Users/praneethchetty/Documents/myprojects/Personalized Cold Email Automation Using Llama 3.3 LangChain /app/resources/my_portfolio.csv"):
         self.file_path = file_path
         self.data = pd.read_csv(file_path)
         self.chroma_client = chromadb.PersistentClient('vectorstore')
