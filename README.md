@@ -51,7 +51,7 @@ Make sure you have the following installed on your system:
 
 
 ### Output:
-<img src="images/output.png" width="500">
+<img src="images/output.png" width="700">
 ## Usage
 
 - **Enter Job URL**: Provide the URL of the job listing (internship or full-time role).
